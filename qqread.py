@@ -197,7 +197,7 @@ def gettime():
 
 def getTimestamp() -> int:
     """获取当日0点时间戳"""
-    timeStamp = int(datetime.datetime(gettime().year, gettime().month, gettime().day, 0, 0, 0).timestamp()*1000)
+    timeStamp = int(datetime.datetime(2020, 12, 8, 0, 0, 0).timestamp()*1000)
     return timeStamp
 
 
