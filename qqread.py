@@ -197,9 +197,8 @@ def gettime():
 
 def getTimestamp() -> int:
     """获取当日0点时间戳"""
-    bj_dt = datetime.utcnow().strftime('%Y-%m-%d') + " 00:00:00"
-    timeArray = time.strptime(bj_dt, "%Y-%m-%d %H:%M:%S")
-    timeStamp = int(time.mktime(timeArray)*1000)
+    cur_time = time.time()
+    timeStamp = int((cur_time-cur_time%86400)*1000)
     return timeStamp
 
 
