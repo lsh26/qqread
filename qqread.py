@@ -329,3 +329,5 @@ def start(index, secrets):
 
 if __name__ == "__main__":
     print(getTimestamp())
+    print(time.timezone)
+    print(time.time())
