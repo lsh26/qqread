@@ -330,5 +330,4 @@ def start(index, secrets):
 
 
 if __name__ == "__main__":
-    for index, secrets in enumerate(qqreadCookie.get_cookies()):
-        start(index, secrets)
+    print(getTimestamp())
