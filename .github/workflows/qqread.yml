@@ -6,16 +6,13 @@ on:
     - cron: '*/11 * * * *'
   watch:
     types: [started]
+env:
+  TZ: Asia/Shanghai
 jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - name: Setup timezone
-        uses: zcong1993/setup-timezone@v1.1.1
-        with:
-          timezone: Asia/Shanghai
-      
       - name: Checkout
         uses: actions/checkout@v2
         
