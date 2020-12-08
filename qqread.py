@@ -197,7 +197,7 @@ def gettime():
 
 def getTimestamp() -> int:
     """获取当日0点时间戳"""
-    timeStamp = int((time.time() -int(time.time()-time.timezone) %86400)*1000)
+    timeStamp = int(datetime(gettime().year, gettime().month, gettime().day, gettime().hour, gettime().minutes, 0).timestamp()*1000)
     return timeStamp
 
 
@@ -327,7 +327,4 @@ def start(index, secrets):
 
 
 if __name__ == "__main__":
-    print(getTimestamp())
-    print(time.timezone)
-    print(time.time())
-    print(gettime())
+    print(getTimestamp(),getTimestamp())
