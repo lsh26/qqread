@@ -197,8 +197,7 @@ def gettime():
 
 def getTimestamp() -> int:
     """获取当日0点时间戳"""
-    today = datetime.date.today()
-    timeStamp = int(time.mktime(today.timetuple())*1000)
+    timeStamp = int(time.mktime(datetime.datetime.now().date().timetuple())*1000)
     return timeStamp
 
 
