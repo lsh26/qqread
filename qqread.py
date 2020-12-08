@@ -197,8 +197,8 @@ def gettime():
 
 def getTimestamp() -> int:
     """获取当日0点时间戳"""
-    now_time = int(time.time())
-    timeStamp = int((now_time - (now_time- time.timezone)%86400)*1000)
+    now_time = time.localtime(time.time())
+    timeStamp = int((time.mktime(time.strptime(time.strftime('%Y-%m-%d 00:00:00', now_time),'%Y-%m-%d %H:%M:%S')))*1000)
     return timeStamp
 
 
