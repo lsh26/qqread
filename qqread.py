@@ -9,7 +9,7 @@ import random
 import requests
 import qqreadCookie
 import notification
-from datetime import datetime, timedelta
+import datetime
 
 
 # 以下为可修改参数
@@ -191,14 +191,14 @@ def totalAmount(headers) -> str:
 
 def gettime():
     """获取北京时间"""
-    bj_dt = datetime.utcnow()+timedelta(hours=8)
+    bj_dt = datetime.datetime.utcnow()+datetime.timedelta(hours=8)
     return bj_dt
 
 
 def getTimestamp() -> int:
     """获取当日0点时间戳"""
-    now_time = time.localtime(time.time())
-    timeStamp = int((time.mktime(time.strptime(time.strftime('%Y-%m-%d 00:00:00', now_time),'%Y-%m-%d %H:%M:%S')))*1000)
+    today = datetime.date.today()
+    timeStamp = int(time.mktime(today.timetuple())*1000)
     return timeStamp
 
 
@@ -331,3 +331,4 @@ if __name__ == "__main__":
     print(getTimestamp())
     print(time.timezone)
     print(time.time())
+    print(gettime())
